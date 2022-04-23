@@ -1131,3 +1131,85 @@ console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message f
 
 ###!!! [Parent][PGPUParent] Error: RunMessage(msgname=PGPU::Msg_ShutdownVR) Channel closing: too late to send/recv, messages will be lost
 
+1650753708026	geckodriver	INFO	Listening on 127.0.0.1:6736
+1650753711106	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "6737" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\17815\\AppData\\Local\\Temp\\rust_mozprofileDbuGLC"
+1650753711410	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\17815\\AppData\\Local\\Temp\\rust_mozprofileDbuGLC\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:6737/devtools/browser/d8dcdbda-aa3f-4ce8-87f5-27c8c27a92a6
+1650753713733	Marionette	INFO	Listening on port 6764
+Read port: 6764
+1650753713858	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://go.rockler.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1728703822, line 1: unreachable code after return statement
+JavaScript warning: https://go.rockler.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1728703822, line 1: unreachable code after return statement
+JavaScript warning: https://go.rockler.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1728703822 line 1 > eval, line 1: unreachable code after return statement
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://go.rockler.com"
+1650753715393	Marionette	INFO	Stopped listening on port 6764
+
+###!!! [Parent][PGPUParent] Error: RunMessage(msgname=PGPU::Msg_ShutdownVR) Channel closing: too late to send/recv, messages will be lost
+
+1650757049475	geckodriver	INFO	Listening on 127.0.0.1:8043
+1650757052550	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "8044" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\17815\\AppData\\Local\\Temp\\rust_mozprofilekJXZO6"
+1650757052821	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\17815\\AppData\\Local\\Temp\\rust_mozprofilekJXZO6\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:8044/devtools/browser/29a5ca9e-12d9-4635-aeb3-602429ab02f0
+1650757054559	Marionette	INFO	Listening on port 8069
+Read port: 8069
+1650757054635	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://go.rockler.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=540935223, line 1: unreachable code after return statement
+JavaScript warning: https://go.rockler.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=540935223, line 1: unreachable code after return statement
+JavaScript warning: https://go.rockler.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=540935223, line 1: unreachable code after return statement
+JavaScript warning: https://go.rockler.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=540935223 line 1 > eval, line 1: unreachable code after return statement
+JavaScript warning: https://go.rockler.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=540935223 line 1 > eval, line 1: unreachable code after return statement
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://go.rockler.com"
+1650757056090	Marionette	INFO	Stopped listening on port 8069
+
+###!!! [Parent][PGPUParent] Error: RunMessage(msgname=PGPU::Msg_ShutdownVR) Channel closing: too late to send/recv, messages will be lost
+
+1650757114682	geckodriver	INFO	Listening on 127.0.0.1:8117
+1650757117746	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "8118" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\17815\\AppData\\Local\\Temp\\rust_mozprofiletv8H0c"
+1650757118020	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\17815\\AppData\\Local\\Temp\\rust_mozprofiletv8H0c\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:8118/devtools/browser/1ce7b01c-cdba-413c-97a1-1a8e8a612e77
+1650757119707	Marionette	INFO	Listening on port 8144
+Read port: 8144
+1650757119740	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://go.rockler.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=463320448, line 1: unreachable code after return statement
+JavaScript warning: https://go.rockler.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=463320448, line 1: unreachable code after return statement
+JavaScript warning: https://go.rockler.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=463320448, line 1: unreachable code after return statement
+JavaScript warning: https://go.rockler.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=463320448 line 1 > eval, line 1: unreachable code after return statement
+JavaScript warning: https://go.rockler.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=463320448 line 1 > eval, line 1: unreachable code after return statement
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://go.rockler.com"
+1650757121257	Marionette	INFO	Stopped listening on port 8144
+1650757217582	geckodriver	INFO	Listening on 127.0.0.1:8203
+1650757220633	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "8204" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\17815\\AppData\\Local\\Temp\\rust_mozprofile348Icj"
+1650757220940	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\17815\\AppData\\Local\\Temp\\rust_mozprofile348Icj\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:8204/devtools/browser/f31c10da-44e5-4a63-ac50-059c7f612c01
+1650757222744	Marionette	INFO	Listening on port 8230
+Read port: 8230
+1650757222856	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://go.rockler.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1639224903, line 1: unreachable code after return statement
+JavaScript warning: https://go.rockler.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1639224903, line 1: unreachable code after return statement
+JavaScript warning: https://go.rockler.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1639224903, line 1: unreachable code after return statement
+JavaScript warning: https://go.rockler.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1639224903 line 1 > eval, line 1: unreachable code after return statement
+JavaScript warning: https://go.rockler.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1639224903 line 1 > eval, line 1: unreachable code after return statement
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://go.rockler.com"
+1650757224373	Marionette	INFO	Stopped listening on port 8230
+
+###!!! [Parent][PGPUParent] Error: RunMessage(msgname=PGPU::Msg_ShutdownVR) Channel closing: too late to send/recv, messages will be lost
+
+1650757373818	geckodriver	INFO	Listening on 127.0.0.1:8320
+1650757376891	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "8321" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\17815\\AppData\\Local\\Temp\\rust_mozprofileBQvsWM"
+1650757377162	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\17815\\AppData\\Local\\Temp\\rust_mozprofileBQvsWM\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:8321/devtools/browser/06a15fbe-6f6c-4196-9172-2864732987da
+1650757379026	Marionette	INFO	Listening on port 8346
+Read port: 8346
+1650757379102	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://go.rockler.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=401556812, line 1: unreachable code after return statement
+JavaScript warning: https://go.rockler.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=401556812, line 1: unreachable code after return statement
+JavaScript warning: https://go.rockler.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=401556812, line 1: unreachable code after return statement
+JavaScript warning: https://go.rockler.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=401556812 line 1 > eval, line 1: unreachable code after return statement
+JavaScript warning: https://go.rockler.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=401556812 line 1 > eval, line 1: unreachable code after return statement
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://go.rockler.com"
+1650757380516	Marionette	INFO	Stopped listening on port 8346

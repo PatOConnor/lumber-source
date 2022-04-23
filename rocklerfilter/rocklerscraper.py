@@ -4,6 +4,11 @@ from selenium.webdriver.firefox.service import Service
 from webdriver_manager.firefox import GeckoDriverManager
 
 class RocklerScraper():
+    rockler_stores = [
+        "04 | Cambridge, MA",
+    ]
+
+
     def __init__(self, storeID:str='04'):
         self.storeID = storeID
 
@@ -26,31 +31,34 @@ class RocklerScraper():
             i = 0 #good old manual iteration to condense souping
             new_entry = {}
             for cell in row.find_all('td'):
-                if i == 0: new_entry['SPECIES'] = cell.string
-                if i == 1: new_entry['SKU'] = cell.string.strip()
-                if i == 2: new_entry['DESCRIPTION'] = cell.string.strip()
+                if i == 0: new_entry['SPECIES'] = cell.text
+                if i == 1: new_entry['SKU'] = cell.text.strip()
+                if i == 2: new_entry['DESCRIPTION'] = cell.text.strip()
                 #if i == 2: new_entry['DESCRIPTION'], new_entry['DIMENSIONS'] = self.description_format(cell.string)
-                if i == 3: new_entry['INVENTORY'] = int(cell.string.strip())
-                if i == 4: new_entry['PRICE'], new_entry['TYPE'] = self.price_format(cell.string)
+                if i == 3: new_entry['INVENTORY'] = int(cell.text.strip())
+                if i == 4: new_entry['PRICE'], new_entry['TYPE'] = self.price_format(cell.text)
                 i += 1
             self.lumber_list.append(new_entry.copy())
         return self.lumber_list
 
     def price_format(self, price_string):
         if price_string == 'Contact Store':
-            return price_string, price_string
+            return 0, price_string
         words = price_string.split()
         price = words[0][1::]
         type_string = 'BOARDFEET' if words[-1].lower() == 'foot' else 'BOARD'
         return float(price), type_string
 
-    def filter_table(self, search_text:str, min_inv:float=1.0, max_price:float=100.0, 
+    def filter_table(self, search_text:str=None, min_inv:float=1.0, max_price:float=100.0, 
                      board_search:bool=True, boardfeet_search:bool=True):
         wood_types = [x.lower().strip() for x in search_text.split(',')]
         filtered_list = []
         for entry in self.lumber_list:
             if entry['SPECIES'].lower().strip() not in wood_types:
-                continue
+                if not wood_types:
+                    pass
+                else:
+                    continue
             if entry['INVENTORY'] < min_inv:
                 continue
             if entry['PRICE'] > max_price:

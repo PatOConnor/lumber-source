@@ -14,22 +14,32 @@ def main(username:str=None):
 class OutputWidget(QWidget):
     def __init__(self, filter_data):
         super().__init__()
+        self.setWindowTitle("Search Results")
         layout = QVBoxLayout()
-        self.label = QLabel("Search Results")
-        layout.addWidget(self.label)
-        
-
         wood_table = QTableWidget()
         wood_table.setColumnCount(5)
         size = len(filter_data)
         wood_table.setRowCount(size)
+        wood_table.setHorizontalHeaderLabels("Species;SKU;Description;Inventory;Price".split(";"))
         for i in range(size):
             wood_table.setItem(i, 0, QTableWidgetItem(filter_data[i]['SPECIES']))
             wood_table.setItem(i, 1, QTableWidgetItem(filter_data[i]['SKU']))
-            wood_table.setItem(i, 2, QTableWidgetItem(filter_data[i]['DESCRIPTION']))
-            wood_table.setItem(i, 3, QTableWidgetItem(filter_data[i]['INVENTORY']))
-            wood_table.setItem(i, 4, QTableWidgetItem(filter_data[i]['PRICE']))        
+            wood_table.setItem(i, 2, QTableWidgetItem(str(filter_data[i]['DESCRIPTION'])))
+            wood_table.setItem(i, 3, QTableWidgetItem(str(filter_data[i]['INVENTORY'])))
+            price = self.price_format(filter_data[i]['PRICE'], filter_data[i]['TYPE'])
+            wood_table.setItem(i, 4, QTableWidgetItem(price))
+        layout.addWidget(wood_table)
         self.setLayout(layout)
+
+
+    def price_format(self, price_data, unit_data):
+        # returns formatted string of the price of the given type of wood
+        unit_str = '/board' if unit_data == 'BOARD' else '/board foot'
+        price_str = '$'+str(price_data)+unit_str
+        return price_str
+
+
+
 
 
 
@@ -45,16 +55,21 @@ class MainWindow(QMainWindow):
         style_file = open(path.dirname(__file__)+'\\rocklerstyle.css')
         gui_style = style_file.read()
         self.setStyleSheet(gui_style)
+        self.create_search_widgets()
+        self.create_input_widgets()
+        self.set_window_layout()
 
+    def create_search_widgets(self):
         #creating widgets of top half
         self.stores_dropdown_widget = QComboBox()
         for store in self.scraper.rockler_stores:
             self.stores_dropdown_widget.addItem(store)
         
-        load_data_button = QPushButton("Load Data")
-        load_data_button.setDefault(True)
-        load_data_button.clicked.connect(self.get_wood_data)
+        self.load_data_button = QPushButton("Load Data")
+        self.load_data_button.setDefault(True)
+        self.load_data_button.clicked.connect(self.get_wood_data)
 
+    def create_input_widgets(self):
         #creating widgets of bottom half
         self.species_inputfield = QLineEdit("walnut, zebrawood")
         self.species_inputfield.setMaxLength(100)
@@ -71,18 +86,18 @@ class MainWindow(QMainWindow):
         self.boardfeet_checkbox = QCheckBox("boardfeet")
         self.boardfeet_checkbox.setChecked(True)
         
-        help_button = QPushButton("Help")
-        help_button.setDefault(True)
-        help_button.clicked.connect(self.display_help)
+        self.help_button = QPushButton("Help")
+        self.help_button.setDefault(True)
+        self.help_button.clicked.connect(self.display_help)
         
-        filter_button = QPushButton("Filter Data")
-        filter_button.setDefault(True)
-        filter_button.clicked.connect(self.filter_data)
+        self.filter_button = QPushButton("Filter Data")
+        self.filter_button.setDefault(True)
+        self.filter_button.clicked.connect(self.filter_data)
 
-        #setting layout of window
+    def set_window_layout(self):
         store_selector_layout = QHBoxLayout()
         store_selector_layout.addWidget(self.stores_dropdown_widget)
-        store_selector_layout.addWidget(load_data_button)
+        store_selector_layout.addWidget(self.load_data_button)
         store_selector_widget = QWidget()
         store_selector_widget.setLayout(store_selector_layout)
         
@@ -95,8 +110,8 @@ class MainWindow(QMainWindow):
         input_params.setLayout(input_params_layout)
         
         params_button_layout = QHBoxLayout()
-        params_button_layout.addWidget(help_button)
-        params_button_layout.addWidget(filter_button)
+        params_button_layout.addWidget(self.help_button)
+        params_button_layout.addWidget(self.filter_button)
         params_button = QWidget()
         params_button.setLayout(params_button_layout)
         
@@ -120,9 +135,17 @@ class MainWindow(QMainWindow):
         self.scraper.get_table(webpage)
 
     def display_help(self):
-        help_blurb = QLabel(""""How to use the software""")
+        help_blurbs = [QLabel("How to use the software:"),
+                       QLabel("1. Select a store from the dropdown menu and click Load Data"),
+                       QLabel("2. Write the species of wood in the text box, separated by commas"),
+                       QLabel("3. Input the minimum quantity and maximum price"),
+                       QLabel("4. Click Filter Data and see the results in a pop-up window")
+                       ]
+        help_layout = QVBoxLayout()
+        for blurb in help_blurbs:
+            help_layout.addWidget(blurb)
         self.help_widget = QWidget()
-        self.help_widget.addWidget(help_blurb)
+        self.help_widget.setLayout(help_layout)
         self.help_widget.show()
         
     def filter_data(self):
@@ -137,9 +160,11 @@ class MainWindow(QMainWindow):
             self.output_widget.show()
         except ValueError:
             error_blurb = QLabel("There was improper data submitted in the text fields.")
+            error_layout = QVBoxLayout()
             self.error_widget = QWidget()
-            self.error_widget.addWidget(error_blurb)
-            self.output_widget.show()
+            error_layout.addWidget(error_blurb)
+            self.error_widget.setLayout(error_layout)
+            self.error_widget.show()
             print("invalid input")
 
         
@@ -148,3 +173,8 @@ class MainWindow(QMainWindow):
 
 if __name__=="__main__":
     main()
+
+
+
+
+    

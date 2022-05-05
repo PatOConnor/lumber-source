@@ -15,6 +15,9 @@ class OutputWidget(QWidget):
     def __init__(self, filter_data):
         super().__init__()
         self.setWindowTitle("Search Results")
+        style_file = open(path.dirname(__file__)+'\\rocklerstyle.css')
+        gui_style = style_file.read()
+        self.setStyleSheet(gui_style)
         layout = QVBoxLayout()
         wood_table = QTableWidget()
         wood_table.setColumnCount(5)
@@ -120,7 +123,7 @@ class MainWindow(QMainWindow):
         all_widgets_layout.addWidget(store_selector_widget)
         all_widgets_layout.addWidget(self.species_inputfield)
         all_widgets_layout.addWidget(input_params)
-        all_widgets_layout.addWidget(filter_button)
+        all_widgets_layout.addWidget(filter_and_help_button)
         all_widgets = QWidget()
         all_widgets.setLayout(all_widgets_layout)
         self.setCentralWidget(all_widgets)

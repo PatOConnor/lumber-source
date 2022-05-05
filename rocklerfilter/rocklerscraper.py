@@ -51,6 +51,7 @@ class RocklerScraper():
 
     def __init__(self, storeID:str='04'):
         self.storeID = storeID
+        self.woodfata = []
 
     def get_page(self, storeID:str):
         service = Service(executable_path=GeckoDriverManager().install())

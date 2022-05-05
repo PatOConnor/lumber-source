@@ -71,14 +71,14 @@ class MainWindow(QMainWindow):
 
     def create_input_widgets(self):
         #creating widgets of bottom half
-        self.species_inputfield = QLineEdit("walnut, zebrawood")
+        self.species_inputfield = QLineEdit("cherry, maple, walnut")
         self.species_inputfield.setMaxLength(100)
 
-        self.inventory_inputfield = QLineEdit("0")
-        self.inventory_inputfield.setMaxLength(8)
+        self.inventory_inputfield = QLineEdit("Min. # In Stock")
+        self.inventory_inputfield.setMaxLength(16)
         
-        self.price_max_inputfield = QLineEdit("100")
-        self.price_max_inputfield.setMaxLength(8)
+        self.price_max_inputfield = QLineEdit("Max Price")
+        self.price_max_inputfield.setMaxLength(16)
         
         self.board_checkbox = QCheckBox("board")
         self.board_checkbox.setChecked(True)

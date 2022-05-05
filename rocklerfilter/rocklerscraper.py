@@ -1,4 +1,3 @@
-from socket import TIPC_IMPORTANCE
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.firefox.service import Service
@@ -9,7 +8,7 @@ class RocklerScraper():
         '36 | Altamonte Springs,  FL',
         '27 | Arlington, TX',
         '17 | Beaverton, OR',
-        '39 | Bolingbrook,  IL'
+        '39 | Bolingbrook, IL',
         '46 | Brandon, FL',
         '07 | Brookfield, WI',
         '11 | Buffalo, NY',
@@ -75,7 +74,6 @@ class RocklerScraper():
                 if i == 0: new_entry['SPECIES'] = cell.text
                 if i == 1: new_entry['SKU'] = cell.text.strip()
                 if i == 2: new_entry['DESCRIPTION'] = cell.text.strip()
-                #if i == 2: new_entry['DESCRIPTION'], new_entry['DIMENSIONS'] = self.description_format(cell.string)
                 if i == 3: new_entry['INVENTORY'] = int(cell.text.strip())
                 if i == 4: new_entry['PRICE'], new_entry['TYPE'] = self.price_format(cell.text)
                 i += 1
@@ -87,6 +85,7 @@ class RocklerScraper():
             return 0, price_string
         words = price_string.split()
         price = words[0][1::]
+        price = price.replace(',','')
         type_string = 'BOARDFEET' if words[-1].lower() == 'foot' else 'BOARD'
         return float(price), type_string
 
@@ -112,13 +111,14 @@ class RocklerScraper():
         return filtered_list
                 
 
-            #commands to paste into python console during testing: 
+    
 
-    #new_list = scraper.filter_table(search_text='walnut, zebrawood')
-    #from rocklerfilter.rocklerscraper import RocklerScraper as rs; scraper = rs(); webpage = scraper.get_page("04"); data = scraper.get_table(webpage);
-
-
-            #This splits up the product description string into components;
+    # This is a method i wrote but decided not to use
+    # it obtains information about the dimensions of the wood from the
+    # description string, but the descriptions were too inconsistent
+    #
+    #   if i == 2: new_entry['DESCRIPTION'], new_entry['DIMENSIONS'] = self.description_format(cell.string)
+    # 
     #import re
     #from fractions import Fraction
     #

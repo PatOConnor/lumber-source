@@ -1,3 +1,4 @@
+from socket import TIPC_IMPORTANCE
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.firefox.service import Service
@@ -5,7 +6,47 @@ from webdriver_manager.firefox import GeckoDriverManager
 
 class RocklerScraper():
     rockler_stores = [
+        '36 | Altamonte Springs,  FL',
+        '27 | Arlington, TX',
+        '17 | Beaverton, OR',
+        '39 | Bolingbrook,  IL'
+        '46 | Brandon, FL',
+        '07 | Brookfield, WI',
+        '11 | Buffalo, NY',
+        '12 | Burnsville, MN',
         "04 | Cambridge, MA",
+        '16 | Cincinatti, OH',
+        '25 | Concord, CA',
+        '03 | Denver, CO',
+        '49 | Fairfax, VA',     
+        '38 | Frisco, TX',
+        '40 | Garland, TX'
+        '30 | Houston, TX',
+        '21 | Indianapolis, IN',
+        '41 | Kennesaw, GA'
+        '13 | Maplewood, MN',
+        '14 | Minnetonka, MN',
+        '47 | Moorestown, NJ',
+        '08 | Novi, MI',
+        '44 | Olathe, KS',
+        '26 | Ontario, CA',
+        '20 | Orange, CA',
+        '42 | Orland Park, IL'
+        '22 | Pasadena, CA',
+        '01 | Phoenix, AZ',
+        '31 | Pittsburg, PA',
+        '37 | Rocklin, CA',
+        '45 | Round Rock, TX',
+        '33 | S. Portland ME',
+        '29 | Sandy Springs, GA',
+        '06 | San Diego, CA',
+        '10 | Schaumburg, IL',
+        '02 | Seattle, WA',
+        '34 | Salem, NH',
+        '43 | Spring, TX',
+        '19 | St Louis, MO',
+        '15 | Tukwila, WA',
+        '23 | Torrance, CA',
     ]
 
 

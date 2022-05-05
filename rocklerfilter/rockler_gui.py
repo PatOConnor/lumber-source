@@ -71,7 +71,7 @@ class MainWindow(QMainWindow):
 
     def create_input_widgets(self):
         #creating widgets of bottom half
-        self.species_inputfield = QLineEdit("cherry, maple, walnut")
+        self.species_inputfield = QLineEdit("Cherry, Maple, Walnut")
         self.species_inputfield.setMaxLength(100)
 
         self.inventory_inputfield = QLineEdit("Min. # In Stock")
@@ -100,7 +100,7 @@ class MainWindow(QMainWindow):
         store_selector_layout.addWidget(self.load_data_button)
         store_selector_widget = QWidget()
         store_selector_widget.setLayout(store_selector_layout)
-        
+    
         input_params_layout = QHBoxLayout()
         input_params_layout.addWidget(self.inventory_inputfield)
         input_params_layout.addWidget(self.price_max_inputfield)
@@ -108,23 +108,19 @@ class MainWindow(QMainWindow):
         input_params_layout.addWidget(self.boardfeet_checkbox)
         input_params = QWidget()
         input_params.setLayout(input_params_layout)
-        
-        params_button_layout = QHBoxLayout()
-        params_button_layout.addWidget(self.help_button)
-        params_button_layout.addWidget(self.filter_button)
-        params_button = QWidget()
-        params_button.setLayout(params_button_layout)
-        #wrapper of the two buttons
-        filter_input_layout = QVBoxLayout()
-        filter_input_layout.addWidget(self.species_inputfield)
-        filter_input_layout.addWidget(input_params)
-        filter_input_layout.addWidget(params_button)
-        filter_input_widget = QWidget()
-        filter_input_widget.setLayout(filter_input_layout)
 
+        filter_and_help_button_layout = QHBoxLayout()
+        filter_and_help_button_layout.addWidget(self.help_button)
+        filter_and_help_button_layout.addWidget(self.filter_button)
+        filter_and_help_button = QWidget()
+        filter_and_help_button.setLayout(filter_and_help_button_layout)
+        
+        #wrapper of the two buttons
         all_widgets_layout = QVBoxLayout()
         all_widgets_layout.addWidget(store_selector_widget)
-        all_widgets_layout.addWidget(filter_input_widget)
+        all_widgets_layout.addWidget(self.species_inputfield)
+        all_widgets_layout.addWidget(input_params)
+        all_widgets_layout.addWidget(filter_button)
         all_widgets = QWidget()
         all_widgets.setLayout(all_widgets_layout)
         self.setCentralWidget(all_widgets)

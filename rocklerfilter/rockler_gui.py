@@ -114,7 +114,7 @@ class MainWindow(QMainWindow):
         params_button_layout.addWidget(self.filter_button)
         params_button = QWidget()
         params_button.setLayout(params_button_layout)
-        
+        #wrapper of the two buttons
         filter_input_layout = QVBoxLayout()
         filter_input_layout.addWidget(self.species_inputfield)
         filter_input_layout.addWidget(input_params)

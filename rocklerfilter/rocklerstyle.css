@@ -1,0 +1,61 @@
+/* for background */
+QMainWindow {
+    background-color: rgb(0, 99, 45);
+}
+
+/* for dropdown menu */
+QComboBox {
+    background-color: rgb(0, 99, 45);
+    /* font appearance */
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:18pt ;
+    text-align: center;
+    color:rgb(209, 170, 170);
+}
+
+/* for load, help, and price buttons */
+QPushButton {
+    background-color: rgb(68, 36, 6);
+    /* font appearance */
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:18pt ;
+    text-align: center;
+    color:rgb(209, 170, 170);
+}
+
+/* for text field input */
+QLineEdit {
+    background-color: rgb(209, 170, 170);
+    /* font appearance */
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:18pt ;
+    text-align: center;
+    color:rgb(68, 36, 6);
+}
+
+QCheckBox {
+    background-color: rgb(209, 170, 170);
+    /* font appearance */
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:18pt ;
+    text-align: center;
+    color:rgb(68, 36, 6);
+}
+
+QLabel {
+    background-color: rgb(209, 170, 170);
+    /* font appearance */
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:18pt ;
+    text-align: center;
+    color:rgb(200, 200, 230) ;
+}
+
+QTableWidget {
+    background-color: rgb(209, 170, 170);
+    /* font appearance */
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:18pt ;
+    text-align: center;
+    color:rgb(200, 200, 230) ;
+}

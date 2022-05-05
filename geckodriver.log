@@ -1725,3 +1725,30 @@ JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 691:
 ###!!! [Parent][PGPUParent] Error: RunMessage(msgname=PGPU::Msg_ShutdownVR) Channel closing: too late to send/recv, messages will be lost
 
 [Parent 16120, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+1651783553046	geckodriver	INFO	Listening on 127.0.0.1:19745
+1651783556109	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "19746" "-no-remote" "-profile" "C:\\Users\\17815\\AppData\\Local\\Temp\\rust_mozprofilecVXyBk"
+1651783556882	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\17815\\AppData\\Local\\Temp\\rust_mozprofilecVXyBk\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:19746/devtools/browser/bae70a6e-8ccb-46f1-adc3-803dc3089783
+1651783560378	Marionette	INFO	Listening on port 19751
+1651783560439	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://go.rockler.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1086006541, line 1: unreachable code after return statement
+JavaScript warning: https://go.rockler.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1086006541, line 1: unreachable code after return statement
+JavaScript warning: https://go.rockler.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1086006541 line 1 > eval, line 1: unreachable code after return statement
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://go.rockler.com"
+1651783563241	Marionette	INFO	Stopped listening on port 19751
+[Parent 15892, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+1651783773911	geckodriver	INFO	Listening on 127.0.0.1:19858
+1651783776976	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "19859" "-no-remote" "-profile" "C:\\Users\\17815\\AppData\\Local\\Temp\\rust_mozprofile3j2mZq"
+1651783777775	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\17815\\AppData\\Local\\Temp\\rust_mozprofile3j2mZq\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:19859/devtools/browser/74959fdf-3796-49b8-a06b-1cf66929ecec
+1651783781288	Marionette	INFO	Listening on port 19864
+1651783781346	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://go.rockler.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=681857561, line 1: unreachable code after return statement
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://go.rockler.com"
+1651783783665	Marionette	INFO	Stopped listening on port 19864
+
+###!!! [Parent][PGPUParent] Error: RunMessage(msgname=PGPU::Msg_ShutdownVR) Channel closing: too late to send/recv, messages will be lost
+
+[Parent 5984, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167

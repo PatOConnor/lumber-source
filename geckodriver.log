@@ -3297,3 +3297,161 @@ console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message f
 
 ###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
 
+1652379792723	geckodriver	INFO	Listening on 127.0.0.1:12747
+1652379795783	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "12748" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\17815\\AppData\\Local\\Temp\\rust_mozprofileLQziBW"
+*** You are running in headless mode.
+1652379796072	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\17815\\AppData\\Local\\Temp\\rust_mozprofileLQziBW\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:12748/devtools/browser/b1b2e97d-58e6-44f7-bc91-30e22ee97118
+1652379797101	Marionette	INFO	Listening on port 12769
+Read port: 12769
+1652379797228	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://go.rockler.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=118840431, line 1: unreachable code after return statement
+JavaScript warning: https://go.rockler.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=118840431, line 1: unreachable code after return statement
+JavaScript warning: https://go.rockler.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=118840431, line 1: unreachable code after return statement
+JavaScript warning: https://go.rockler.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=118840431 line 1 > eval, line 1: unreachable code after return statement
+JavaScript warning: https://go.rockler.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=118840431 line 1 > eval, line 1: unreachable code after return statement
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://go.rockler.com"
+1652379798655	Marionette	INFO	Stopped listening on port 12769
+JavaScript error: resource://gre/modules/TerminatorTelemetry.jsm, line 71: AbortError: IOUtils: Shutting down and refusing additional I/O tasks
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+
+1652381627893	geckodriver	INFO	Listening on 127.0.0.1:13359
+1652381631006	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "13360" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\17815\\AppData\\Local\\Temp\\rust_mozprofileyKJbtc"
+*** You are running in headless mode.
+1652381631288	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\17815\\AppData\\Local\\Temp\\rust_mozprofileyKJbtc\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:13360/devtools/browser/4594ee14-2bff-4562-822d-cb415de3cde8
+1652381632349	Marionette	INFO	Listening on port 13384
+Read port: 13384
+1652381632451	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://go.rockler.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1679157594, line 1: unreachable code after return statement
+JavaScript warning: https://go.rockler.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1679157594, line 1: unreachable code after return statement
+JavaScript warning: https://go.rockler.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1679157594, line 1: unreachable code after return statement
+JavaScript warning: https://go.rockler.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1679157594 line 1 > eval, line 1: unreachable code after return statement
+JavaScript warning: https://go.rockler.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1679157594 line 1 > eval, line 1: unreachable code after return statement
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://go.rockler.com"
+1652381634595	Marionette	INFO	Stopped listening on port 13384
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+
+1652382935368	geckodriver	INFO	Listening on 127.0.0.1:14031
+1652382938413	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "14032" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\17815\\AppData\\Local\\Temp\\rust_mozprofileM9g0mN"
+*** You are running in headless mode.
+1652382938696	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\17815\\AppData\\Local\\Temp\\rust_mozprofileM9g0mN\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:14032/devtools/browser/db37dd28-1ab2-4806-ad32-c04a47c476d8
+1652382939703	Marionette	INFO	Listening on port 14054
+Read port: 14054
+1652382939756	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1652383015936	geckodriver	INFO	Listening on 127.0.0.1:14121
+1652383019028	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "14122" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\17815\\AppData\\Local\\Temp\\rust_mozprofilewyCte1"
+*** You are running in headless mode.
+1652383019355	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\17815\\AppData\\Local\\Temp\\rust_mozprofilewyCte1\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:14122/devtools/browser/b5b10585-0444-467a-82d2-d3ecfb4cb967
+1652383020326	Marionette	INFO	Listening on port 14144
+Read port: 14144
+1652383020382	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1652383851086	geckodriver	INFO	Listening on 127.0.0.1:14461
+1652383854133	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "14462" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\17815\\AppData\\Local\\Temp\\rust_mozprofileGGi4J1"
+*** You are running in headless mode.
+1652383854532	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\17815\\AppData\\Local\\Temp\\rust_mozprofileGGi4J1\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:14462/devtools/browser/9ef211bf-2d43-404d-8cf0-3c28a52d97f7
+1652383855627	Marionette	INFO	Listening on port 14483
+Read port: 14483
+1652383855710	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1652383900360	geckodriver	INFO	Listening on 127.0.0.1:14543
+1652383903431	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "14544" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\17815\\AppData\\Local\\Temp\\rust_mozprofileHOmbjK"
+*** You are running in headless mode.
+1652383903726	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\17815\\AppData\\Local\\Temp\\rust_mozprofileHOmbjK\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:14544/devtools/browser/36da5933-3745-4feb-a013-e440ee1b841f
+1652383904693	Marionette	INFO	Listening on port 14566
+Read port: 14566
+1652383904782	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1652384006851	geckodriver	INFO	Listening on 127.0.0.1:14639
+1652384009926	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "14640" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\17815\\AppData\\Local\\Temp\\rust_mozprofileCg1B3g"
+*** You are running in headless mode.
+1652384010222	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\17815\\AppData\\Local\\Temp\\rust_mozprofileCg1B3g\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:14640/devtools/browser/e441dc28-bd8b-4937-9eca-ffaf3686ed96
+1652384011427	Marionette	INFO	Listening on port 14663
+Read port: 14663
+1652384011471	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1652384083700	geckodriver	INFO	Listening on 127.0.0.1:14720
+1652384086774	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "14721" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\17815\\AppData\\Local\\Temp\\rust_mozprofileo7QXeo"
+*** You are running in headless mode.
+1652384087101	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\17815\\AppData\\Local\\Temp\\rust_mozprofileo7QXeo\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:14721/devtools/browser/7b10b742-b18d-40da-92fe-5b426e55bcf3
+1652384088251	Marionette	INFO	Listening on port 14749
+Read port: 14749
+1652384088315	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1652384278552	geckodriver	INFO	Listening on 127.0.0.1:14987
+1652384281640	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "14988" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\17815\\AppData\\Local\\Temp\\rust_mozprofile5n2O4r"
+*** You are running in headless mode.
+1652384281932	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\17815\\AppData\\Local\\Temp\\rust_mozprofile5n2O4r\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:14988/devtools/browser/9ca6b9e6-f165-467d-b90d-1bc345e57923
+1652384282951	Marionette	INFO	Listening on port 15010
+Read port: 15010
+1652384283003	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1652384334548	geckodriver	INFO	Listening on 127.0.0.1:15058
+1652384337620	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "15059" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\17815\\AppData\\Local\\Temp\\rust_mozprofile0fphtX"
+*** You are running in headless mode.
+1652384337925	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\17815\\AppData\\Local\\Temp\\rust_mozprofile0fphtX\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:15059/devtools/browser/57cdfbe9-2286-431a-a303-3a769ff4cd9f
+1652384338875	Marionette	INFO	Listening on port 15080
+Read port: 15080
+1652384338948	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1652384360349	geckodriver	INFO	Listening on 127.0.0.1:15120
+1652384363395	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "15121" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\17815\\AppData\\Local\\Temp\\rust_mozprofiledepuj5"
+*** You are running in headless mode.
+1652384363695	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\17815\\AppData\\Local\\Temp\\rust_mozprofiledepuj5\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:15121/devtools/browser/55758634-89cd-45b8-b2d2-e7e7032a26b8
+1652384364676	Marionette	INFO	Listening on port 15142
+Read port: 15142
+1652384364739	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1652384490716	geckodriver	INFO	Listening on 127.0.0.1:15227
+1652384493791	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "15228" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\17815\\AppData\\Local\\Temp\\rust_mozprofilet1vQa0"
+*** You are running in headless mode.
+1652384494075	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\17815\\AppData\\Local\\Temp\\rust_mozprofilet1vQa0\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:15228/devtools/browser/eee3617b-7ac2-44bf-a16e-e6b837c1a7ef
+1652384495098	Marionette	INFO	Listening on port 15250
+Read port: 15250
+1652384495127	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1652384608386	geckodriver	INFO	Listening on 127.0.0.1:15333
+1652384611455	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--remote-debugging-port" "15334" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\17815\\AppData\\Local\\Temp\\rust_mozprofileNcZaCi"
+*** You are running in headless mode.
+1652384611745	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\17815\\AppData\\Local\\Temp\\rust_mozprofileNcZaCi\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:15334/devtools/browser/ac0b60e3-e14d-44f5-b0c7-b06c16bd5dbd
+1652384612670	Marionette	INFO	Listening on port 15356
+Read port: 15356
+1652384612707	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://go.rockler.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=573101067, line 1: unreachable code after return statement
+JavaScript warning: https://go.rockler.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=573101067, line 1: unreachable code after return statement
+JavaScript warning: https://go.rockler.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=573101067, line 1: unreachable code after return statement
+JavaScript warning: https://go.rockler.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=573101067 line 1 > eval, line 1: unreachable code after return statement
+JavaScript warning: https://go.rockler.com/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=573101067 line 1 > eval, line 1: unreachable code after return statement
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://go.rockler.com"

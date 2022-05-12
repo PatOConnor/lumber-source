@@ -9,18 +9,17 @@ class RocklerScraper():
     def __init__(self, storeID:str='04'):
         self.storeID = storeID
         self.lumber_list = []
+        self.service = Service(executable_path=GeckoDriverManager().install())
+        self.fireFoxOptions = webdriver.FirefoxOptions()
+        self.fireFoxOptions.headless = True
+        self.driver = webdriver.Firefox(service=self.service, options=self.fireFoxOptions)
 
     def get_page(self, storeID:str):
-        self.service = Service(executable_path=GeckoDriverManager().install())
-        fireFoxOptions = webdriver.FirefoxOptions()
-        fireFoxOptions.headless = True
-        driver = webdriver.Firefox(service=self.service, options=fireFoxOptions)
-        driver.get('https://go.rockler.com/retail_lumber.cfm?store='+storeID)
-        button = driver.find_element_by_xpath('/html/body/form/input')
+        self.driver.get('https://go.rockler.com/retail_lumber.cfm?store='+storeID)
+        button = self.driver.find_element_by_xpath('/html/body/form/input')
         button.click()
-        webpage = driver.page_source
-        driver.close()
-        return webpage   
+        webpage = self.driver.page_source
+        return webpage 
 
    #goes to the webpage for the inventory and returns a dict of info
     def get_table(self, webpage):
@@ -74,47 +73,5 @@ class RocklerScraper():
             filtered_list.append(entry.copy())
         return filtered_list
     
-    #
-    rockler_stores = {
-    'Altamonte Springs, FL': '36',
-    'Arlington, TX'   : '27',
-    'Beaverton, OR'   : '17',
-    'Bolingbrook, IL' : '39',
-    'Brandon, FL'     : '46',
-    'Brookfield, WI'  : '07',
-    'Buffalo, NY'     : '11',
-    'Burnsville, MN'  : '12',
-    'Cambridge, MA'   : '04',
-    'Cincinatti, OH'  : '16',
-    'Concord, CA'     : '25',
-    'Denver, CO'      : '03',
-    'Fairfax, VA'     : '49',
-    'Frisco, TX'      : '38',
-    'Garland, TX'     : '40',
-    'Indianapolis, IN': '21',
-    'Houston, TX'     : '30',
-    'Kennesaw, GA'    : '41',
-    'Maplewood, MN'   : '13',
-    'Minnetonka, MN'  : '14',
-    'Moorestown, NJ'  : '47',
-    'Novi, MI'        : '08',
-    'Olathe, KS'      : '44',
-    'Ontario, CA'     : '26',
-    'Orange, CA'      : '20',
-    'Orland Park, IL' : '42',
-    'Pasadena, CA'    : '22',
-    'Pittsburg, PA'   : '31',
-    'Phoenix, AZ'     : '01',
-    'Rocklin, CA'     : '37',
-    'Round Rock, TX'  : '45',
-    'Salem, NH'       : '34',
-    'San Diego, CA'   : '06', 
-    'Sandy Springs, GA': '29',
-    'Schaumburg, IL'  : '10',
-    'Seattle, WA'     : '02',
-    'Spring, TX'      : '43',
-    'St Louis, MO'    : '19',
-    'S. Portland ME'  : '33',
-    'Torrance, CA'    : '23',
-    'Tukwila, WA'     : '15', 
-}
+    def close_driver(self):
+        self.driver.close()

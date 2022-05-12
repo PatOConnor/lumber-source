@@ -51,25 +51,11 @@ QLabel {
     color:rgb(200, 200, 230) ;
 }
 
-QHeaderView::slotted {
+QTableWidget {
     background-color: rgb(209, 170, 170);
     /* font appearance */
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size:18pt ;
     text-align: center;
     color:rgb(200, 200, 230) ;
-    border-width: 3px solid black;
-
-}
-
-/* table cell */
-QTableWidgetItem {
-    background-color: rgb(209, 170, 170);
-    /* font appearance */
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size:18pt ;
-    text-align: center;
-    color:black ;
-    border-width: 3px solid black;
-
 }

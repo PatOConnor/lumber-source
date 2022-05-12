@@ -76,7 +76,7 @@ class RocklerScraper():
     
     #
     rockler_stores = {
-    'Altamonte Springs,  FL': '36',
+    'Altamonte Springs, FL': '36',
     'Arlington, TX'   : '27',
     'Beaverton, OR'   : '17',
     'Bolingbrook, IL' : '39',

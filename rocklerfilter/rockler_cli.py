@@ -3,18 +3,16 @@ from rich.columns import Columns
 from rich.panel import Panel
 from rich.layout import Layout
 from rich import print
+import os
 
 def main():
     wood_filter = RocklerCLI()
     running = True
     while(running):
-        wood_filter.get_wood_data()
-        #ask for another search
-        wood_filter.wood_layout["infobox"]["message"].update(Panel('Would you like to search again?', expand=False))
-        run_again = input()
-        if run_again.lower() != 'y': 
-            running = False
- 
+        #user-input where content-box displays stores
+        storeID = wood_filter.get_store_id()
+        running = wood_filter.get_wood_data(storeID)
+
 rockler_stores = {
     'Altamonte Springs, FL': '36',
     'Arlington, TX'   : '27',
@@ -61,106 +59,125 @@ rockler_stores = {
 
 class RocklerCLI:
     def __init__(self):
+        #setting layout of CLI widgets
         self.wood_layout = Layout(name="wrapper")
         self.wood_layout.split_column(
+            Layout(name="buffer_box", size=1),
             Layout(name="disclaimer_box", size=4),
-            Layout(name="content_box", size=28),
+            Layout(name="content_box", size=26),
             Layout(name="infobox", size=4),
         )
         self.wood_layout["infobox"].split_row(
             Layout(name="message", size=100),
             Layout(name="title"),
         )
+        self.wood_layout["buffer_box"].update(Panel(" "))
         self.wood_layout["disclaimer_box"].update(Panel("Lumber Source uses data scraped from the Rockler Woodworking website and is no way affiliated with Rockler woodworking or any of its parents, siblings or subsidiaries"))
         self.wood_layout["title"].update(Panel("Lumber Sourcing Tool", expand=False))
-        print('\nLoading... ')
+        self.wood_layout['message'].update("Loading...")
+        self.wood_layout['content_box'].update("Loading...")
+        self.display_ui()        
         self.scraper = RocklerScraper()
+        #creating panels for the stores at initialization:
+        #wrapping the city names and numbers in styling and linebreaks:
+        panel_strings = [f'[b]{self.add_linebreaks_to(x, 16)}\t [yellow]#{rockler_stores[x]}[/yellow][/b]' for x in rockler_stores]
+        #chopping into two pages for placability
+        self.store_panels_1 = [Panel(x) for x in panel_strings[:24]]
+        self.store_panels_2 = [Panel(x) for x in panel_strings[24:]]
+        self.store_panel_state = 2#its 2 so it swaps to state 1
+        #will be filled in with a 2d list of Panels
+        self.data_panels = []
         
-    def get_wood_data(self):    
-        storeID = self.get_store_id()
+    """Updates the infobox and content panels with the list of stores"""
+    def get_store_id(self)->str:
+        self.wood_layout["message"].update(Panel('which store # would you like to go to? Press Enter for next page.'))
+        self.update_stores()
+        good_input = False
+        while(not good_input):
+            os.system("cls" if os.name=='nt' else 'clear')
+            self.display_ui()
+            chosen_store = input('\t:')
+            if chosen_store.lower().strip() == '':
+                self.update_stores()
+                print(self.store_panel_state)
+            #catching single-digit inputs 
+            if len(chosen_store) == 1: chosen_store = '0'+chosen_store
+            #checking if its a valid input
+            if chosen_store in rockler_stores.values():
+                return chosen_store
+
+
+    """Updates content panel with the other page"""        
+    def update_stores(self):        
+        if self.store_panel_state == 2:
+            self.wood_layout["content_box"].update(Columns(self.store_panels_1))
+            self.store_panel_state = 1
+        else:
+            self.wood_layout["content_box"].update(Columns(self.store_panels_2))
+            self.store_panel_state = 2
+
+    """Main method to be ran over and over"""        
+    def get_wood_data(self, storeID):    
+        #getting data from chosen store, applying loading screen
+        self.wood_layout['message'].update("Loading...")
+        self.wood_layout['content_box'].update("Getting Data...")
+        self.display_ui()
         self.scraper.get_table(webpage=self.scraper.get_page(storeID))
+        #user-input where message box is overwritten with these messages
         search_text = self.get_wood_types()
         min_inv  = self.get_value(default=1.0, msg="Enter the minimum inventory count of what you're looking for: ")
         min_price = self.get_value(default=0.0, msg="Enter the lower bound for the price range: ")
         max_price = self.get_value(default=100.0, msg="Enter the upper bound for the price range: ")
         board_search = self.get_bool(default=True, msg="Are you searching for Boards? Input 'y' if so. ")
         boardfeet_search = self.get_bool(default=True, msg="Are you searching for Board Feet? Input 'y' if so. ")
-        #print(search_text, min_inv, min_price, max_price, board_search, boardfeet_search)
-        #input()
-        data = self.scraper.filter_table(search_text, min_inv, min_price, max_price, 
+        #filtering data
+        self.wood_data = self.scraper.filter_table(search_text, min_inv, min_price, max_price, 
                         board_search, boardfeet_search)
-        self.print_data(data)
-
-
-    def get_wood_types(self):
-        self.wood_layout["message"].update(Panel("Enter Types of Wood You are Searching for, separated by commas.\nPress Enter with no text to see all species of wood in stock.", expand=False))
-        #self.wood_layout["infobox"]["message"].update(Panel("Enter Types of Wood You are Searching for, separated by commas.\nPress Enter with no text to see all species of wood in stock.", expand=False))
-        print(self.wood_layout)
-        woods = input('\t:')
-        return woods.strip()
-
-    def get_store_id(self):
-        self.wood_layout["message"].update(Panel('which store # would you like to go to? Press Enter for next page.'))
-        self.print_stores(page=1)
-        good_input = False
-        while(not good_input):
-            print(self.wood_layout)
-            chosen_store = input()
-            if chosen_store.lower().strip() == '':
-                self.print_stores(page=2)
-                continue
-            #catching single-digit inputs 
-            if len(chosen_store) == 1: chosen_store = '0'+chosen_store
-            #checking if its a valid input
-            if chosen_store in rockler_stores.values():
-                return chosen_store
-        
-        
-        # self.wood_layout["infobox"]["message"].update(Panel(f'\nPlease wait while the webpage for store #{chosen_store} is accessed... '))
-        # print(self.wood_layout)
-        # #print(Panel(f'\nPlease wait while the webpage for store #{chosen_store} is accessed... ', expand=False))
-        return chosen_store
-
-    def print_stores(self, page:int):        
-        #wrapping the city names and numbers in styling and linebreaks:
-        panel_strings = [f'[b]{self.add_linebreaks_to(x, 16)}\t [yellow]#{rockler_stores[x]}[/yellow][/b]' for x in rockler_stores]
-        #chopping into two pages
-        panels_1 = [Panel(x) for x in panel_strings[:24]]
-        panels_2 = [Panel(x) for x in panel_strings[24:]]
-        if page==1:
-            self.wood_layout["content_box"].update(Columns(panels_1))
-        else:
-            self.wood_layout["content_box"].update(Columns(panels_2))
-        print(self.wood_layout)
-
-    """this is a boilerplate around the input function to only provide perperly typed input"""
-    def get_value(self, default:float, msg:str)->float:
-        self.wood_layout["infobox"]["message"].update(Panel(msg, expand=False))
-        print(self.wood_layout)
-        #print(Panel(msg, expand=False))
-        val = input('\t:').strip()
-        try:
-            val = float(val)
-        except ValueError:
-            val = default
-        return val
-
-    def get_bool(self, default, msg:str)->bool:
-        self.wood_layout["infobox"]["message"].update(Panel(msg, expand=False))
-        print(self.wood_layout)
-        #print(Panel(msg, expand=False))
-        val = input('\t:').lower().strip()
-        if val == 'y':
+        #user-input loop where user can cycle through pages of collected data
+        self.wood_data_page_num = 0
+        self.create_data_panels()
+        self.print_data()
+        #ask for another search
+        self.wood_layout["infobox"]["message"].update(Panel('Would you like to search again?', expand=False))
+        self.display_ui()
+        run_again = input('\t:')
+        if run_again.lower() in  ['y', 'yes']: 
             return True
-        elif val == '':
-            return default
         return False
 
-    def print_data(self, wood_data:list[dict])->None:
-        panels = [Panel(self.get_data_string(x)) for x in wood_data]
-        self.wood_layout["content_box"].update(Columns(panels))
-        #print(Columns(panels))
-            
+
+
+    def display_ui(self):
+        os.system("cls" if os.name=='nt' else 'clear')
+        print(self.wood_layout)
+
+
+
+
+    """Updates content panel with the pages of data"""
+    def print_data(self, page_num=0)->None:
+        self.wood_layout["message"].update(Panel('Here are your results! Press enter to cycle through, enter "back" to go back one page, "quit" to exit results.'))
+        while(True):
+            if (len(self.data_panels) == 0):
+                self.wood_layout["content_box"].update(Panel("No matching items were found. "))
+            else:
+                self.wood_layout["content_box"].update(Columns(self.data_panels[page_num]))
+            self.display_ui()
+            scroll = input('\t:').lower().strip()
+            if scroll == '':
+                #+= and -= operators are avoided to make the 1-line if/else loop the pages
+                page_num = page_num + 1 if page_num != len(self.data_panels)-1 else 0
+            elif scroll == 'back':
+                page_num = page_num - 1 if page_num != 0 else len(self.data_panels)-1
+            elif scroll == 'quit':
+                break
+
+    """Takes the list of dicts and creates a nested list of panels"""
+    def create_data_panels(self):
+        panels = [Panel(self.get_data_string(x)) for x in self.wood_data]
+        self.data_panels = [panels[i:i+10] for i in range(0, len(panels), 10)]
+
+    """Formats a wood dictionary entry into the text markup for a panel"""            
     def get_data_string(self, data:dict)->str:
         species = f"[b][blue]{data['SPECIES']}[/b][/blue]\n"
         sku = f"[b][blue]{data['SKU']}[/b][/blue]\n"
@@ -174,7 +191,38 @@ class RocklerCLI:
         return species+sku+desc+inv+price+woodtype
 
 
-        
+
+
+        #TODO: Gotta merge these methods into one complex one
+    """I need to incorporate this into the function below"""
+    def get_wood_types(self):
+        self.wood_layout["message"].update(Panel("Enter Types of Wood You are Searching for, separated by commas.\nPress Enter with no text to see all species of wood in stock.", expand=False))
+        self.display_ui()
+        woods = input('\t:')
+        return woods.strip()
+
+    """Displays msg in the message box and returns the default value if input is bad"""
+    def get_value(self, default:float, msg:str)->float:
+        self.wood_layout["infobox"]["message"].update(Panel(msg, expand=False))
+        self.display_ui()
+        val = input('\t:').strip()
+        try:
+            val = float(val)
+        except ValueError:
+            val = default
+        return val
+
+    """this also needs to get merged into the function above"""
+    def get_bool(self, default, msg:str)->bool:
+        self.wood_layout["infobox"]["message"].update(Panel(msg, expand=False))
+        self.display_ui()
+        val = input('\t:').lower().strip()
+        if val == 'y':
+            return True
+        elif val == '':
+            return default
+        return False
+
 
     def add_linebreaks_to(self, s, chars_per_line, ending_linebreak=False):
         outputstr = ''
@@ -194,5 +242,8 @@ if __name__ == '__main__':
 
 
 
-# TODO: add a "return to the previous page" button
-# TODO: show wood type output
+#todo: merge the 3 input functions into one
+# keypress input to go backwards?
+# page numbers
+# finalize disclaimers
+# final formatting on city cards

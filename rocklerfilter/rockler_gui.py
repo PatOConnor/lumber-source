@@ -75,15 +75,18 @@ class MainWindow(QMainWindow):
         self.species_inputfield.setMaxLength(100)
 
         self.inventory_inputfield = QLineEdit("Min. # In Stock")
-        self.inventory_inputfield.setMaxLength(16)
+        self.inventory_inputfield.setMaxLength(4)
+
+        self.price_min_inputfield = QLineEdit("Min Price")
+        self.price_min_inputfield.setMaxLength(8)
         
         self.price_max_inputfield = QLineEdit("Max Price")
-        self.price_max_inputfield.setMaxLength(16)
+        self.price_max_inputfield.setMaxLength(8)
         
-        self.board_checkbox = QCheckBox("board")
+        self.board_checkbox = QCheckBox("Board #")
         self.board_checkbox.setChecked(True)
         
-        self.boardfeet_checkbox = QCheckBox("boardfeet")
+        self.boardfeet_checkbox = QCheckBox("Boardfeet Area")
         self.boardfeet_checkbox.setChecked(True)
         
         self.help_button = QPushButton("Help")
@@ -103,6 +106,7 @@ class MainWindow(QMainWindow):
     
         input_params_layout = QHBoxLayout()
         input_params_layout.addWidget(self.inventory_inputfield)
+        input_params_layout.addWidget(self.price_min_inputfield)
         input_params_layout.addWidget(self.price_max_inputfield)
         input_params_layout.addWidget(self.board_checkbox)
         input_params_layout.addWidget(self.boardfeet_checkbox)
@@ -120,7 +124,7 @@ class MainWindow(QMainWindow):
         all_widgets_layout.addWidget(store_selector_widget)
         all_widgets_layout.addWidget(self.species_inputfield)
         all_widgets_layout.addWidget(input_params)
-        all_widgets_layout.addWidget(filter_button)
+        all_widgets_layout.addWidget(filter_and_help_button)
         all_widgets = QWidget()
         all_widgets.setLayout(all_widgets_layout)
         self.setCentralWidget(all_widgets)

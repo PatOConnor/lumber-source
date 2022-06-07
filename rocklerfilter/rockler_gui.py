@@ -1,5 +1,5 @@
 from re import S
-from rocklerscraper import RocklerScraper
+from rocklerscraper import RocklerScraper, rockler_stores
 from PyQt6.QtWidgets import QApplication, QWidget, QMainWindow, QPushButton, QVBoxLayout, QHBoxLayout, QLabel, QLineEdit, QComboBox, QCheckBox, QTableWidget, QTableWidgetItem
 from PyQt6.QtCore import Qt
 from os import path
@@ -62,7 +62,7 @@ class MainWindow(QMainWindow):
     def create_search_widgets(self):
         #creating widgets of top half
         self.stores_dropdown_widget = QComboBox()
-        for store in self.scraper.rockler_stores:
+        for store in rockler_stores:
             self.stores_dropdown_widget.addItem(store)
         
         self.load_data_button = QPushButton("Load Data")

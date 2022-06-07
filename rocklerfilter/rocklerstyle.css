@@ -1,61 +1,66 @@
+QWidget {
+    --col-background: rgb(0,99,45);
+    --col-button:     rgb(68,36,6);
+    --col-inputbox:   rgb(209,170,170);
+    --textcol-button: rgb(209,170,170);
+    --textcol-input:  rgb(68,36,6);
+    --box-font:       'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    --text-size:       18pt;
+}
+
+
 /* for background */
 QMainWindow {
-    background-color: rgb(0, 99, 45);
+    background-color: var(--col-background);
 }
 
 /* for dropdown menu */
 QComboBox {
-    background-color: rgb(0, 99, 45);
-    /* font appearance */
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size:18pt ;
-    text-align: center;
-    color:rgb(209, 170, 170);
+    background-color: var(--col-background);
+    font-family:      var(--box-font);
+    font-size:        var(--text-size);
+    text-align:       center;
+    color:            var(--textcol-input);
 }
 
 /* for load, help, and price buttons */
 QPushButton {
-    background-color: rgb(68, 36, 6);
-    /* font appearance */
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size:18pt ;
-    text-align: center;
-    color:rgb(209, 170, 170);
+    background-color: var(--col-button);
+    font-family:      var(--box-font);
+    font-size:        var(--text-size);
+    text-align:       center;
+    color:            var(--textcol-button);
 }
 
 /* for text field input */
 QLineEdit {
-    background-color: rgb(209, 170, 170);
-    /* font appearance */
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size:18pt ;
-    text-align: center;
-    color:rgb(68, 36, 6);
+    background-color: var(--col-inputbox);
+    font-family:      var(--box-font);
+    font-size:        var(--text-size);
+    text-align:       center;
+    color:            var(--textcol-input);
 }
 
 QCheckBox {
-    background-color: rgb(209, 170, 170);
-    /* font appearance */
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size:18pt ;
-    text-align: center;
-    color:rgb(68, 36, 6);
+    background-color: var(--col-inputbox);
+    font-family:      var(--box-font);
+    font-size:        var(--text-size);
+    text-align:       center;
+    color:            var(--textcol-input)
 }
 
 QLabel {
-    background-color: rgb(209, 170, 170);
-    /* font appearance */
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size:18pt ;
-    text-align: center;
-    color:rgb(200, 200, 230) ;
+    background-color: var(--col-inputbox);
+    font-family:      var(--box-font);
+    font-size:        var(--text-size);
+    text-align:       center;
+    color:            var(--textcol-input);
 }
 
 QTableWidget {
-    background-color: rgb(209, 170, 170);
-    /* font appearance */
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size:18pt ;
-    text-align: center;
-    color:rgb(200, 200, 230) ;
+    background-color: var(--col-inputbox);
+    font-family:      var(--box-font);
+    font-size:        var(--text-size);
+    text-align:       center;
+    color:            var(--textcol-input);
 }

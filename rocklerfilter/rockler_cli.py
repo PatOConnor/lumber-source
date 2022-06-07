@@ -46,6 +46,7 @@ class RocklerCLI:
         self.store_panel_state = 2#its 2 so it swaps to state 1
         #will be filled in with a 2d list of Panels
         self.data_panels = []
+        self.page_num = 0
     
     """Binding a screen clear to the write layout method"""
     def display_ui(self):
@@ -101,7 +102,6 @@ class RocklerCLI:
         self.wood_data = self.scraper.filter_table(search_text, min_inv, min_price, max_price, 
                         board_search, boardfeet_search)
         #user-input loop where user can cycle through pages of collected data
-        self.wood_data_page_num = 0
         self.create_data_panels()
         self.print_data()
         #ask for another search
@@ -128,26 +128,25 @@ class RocklerCLI:
             else:
                 self.wood_layout["content_box"].update(Columns(self.data_panels[page_num]))
             self.display_ui()
-
-            #   getting keyboard input to work
             
-            #+= and -= operators are avoided to make the 1-line if/else loop the pages
-            # def page_up(): page_num = page_num + 1 if page_num != len(self.data_panels)-1 else 0
-            # def page_down(): page_num = page_num - 1 if page_num != 0 else len(self.data_panels)-1
-            # def exit_view(): self.viewing_data = False
-            # keyboard.on_press_key("right arrow", lambda _: page_up)
-            # keyboard.on_press_key("left arrow", lambda _: page_down)
-            # keyboard.on_press_key("esc", lambda _: exit_view)
 
             scroll = input('\t:').lower().strip()
             if scroll == '':
-                #+= and -= operators are avoided to make the 1-line if/else loop the pages
-                page_num = page_num + 1 if page_num != len(self.data_panels)-1 else 0
+                self.page_up()
             elif scroll == 'back':
-                page_num = page_num - 1 if page_num != 0 else len(self.data_panels)-1
+                self.page_down()
             elif scroll == 'quit':
-                break
+                self.exit_view()
 
+    # += and -= operators are not used to enable the one line ternary conditional
+    """Move foward in data output"""
+    def page_up(self): 
+        self.page_num = self.page_num + 1 if self.page_num != len(self.data_panels)-1 else 0
+    """Move Backward in data output"""
+    def page_down(self): 
+        self.page_num = self.page_num - 1 if self.page_num != 0 else len(self.data_panels)-1
+    """Exit viewing oof data output to perform another search"""
+    def exit_view(self): self.viewing_data = False
 
     """Takes the list of dicts and creates a nested list of panels"""
     def create_data_panels(self):
@@ -198,6 +197,3 @@ class RocklerCLI:
 
 if __name__ == '__main__':
     main()
-
-    # keypress-input on menu page
-    # make sure boxes don't bleed over into the bottom box
